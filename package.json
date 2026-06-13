@@ -1,6 +1,6 @@
 {
   "name": "autoskill-md",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate /.well-known/skills.md from code comments and route hints.",
   "type": "module",
   "license": "CC-BY-4.0",
