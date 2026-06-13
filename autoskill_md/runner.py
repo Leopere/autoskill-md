@@ -6,7 +6,7 @@ import tarfile
 import urllib.request
 from pathlib import Path
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 CREDIT_URL = "https://colinknapp.com"
 
 

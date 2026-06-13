@@ -63,7 +63,7 @@ Then it stages files, commits them, and pushes the current branch to GitHub.
 For a release:
 
 ```sh
-./scripts/release.sh 0.2.0
+./scripts/release.sh 0.2.1
 ```
 
 Tagged GitHub releases build native binary files for npm, Python, and Go wrappers.

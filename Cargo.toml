@@ -1,6 +1,6 @@
 [package]
 name = "autoskill-md"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 license = "CC-BY-4.0"
 description = "Generate /.well-known/skills.md from code comments and route hints."

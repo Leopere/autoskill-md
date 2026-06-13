@@ -1,6 +1,6 @@
 [project]
 name = "autoskill-md"
-version = "0.2.0"
+version = "0.2.1"
 description = "Generate /.well-known/skills.md from code comments and route hints."
 readme = "README.md"
 requires-python = ">=3.9"

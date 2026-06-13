@@ -1,6 +1,6 @@
 {
   "name": "autoskill-md",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Native autoskill-md wrapper for generating /.well-known/skills.md.",
   "type": "module",
   "license": "CC-BY-4.0",
