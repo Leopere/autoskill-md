@@ -1,4 +1,9 @@
 node_modules/
+__pycache__/
+*.pyc
 coverage/
+target/
+dist/
+vendor/
 *.tgz
 .DS_Store

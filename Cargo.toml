@@ -1,0 +1,33 @@
+[package]
+name = "autoskill-md"
+version = "0.2.0"
+edition = "2021"
+license = "CC-BY-4.0"
+description = "Generate /.well-known/skills.md from code comments and route hints."
+repository = "https://github.com/Leopere/autoskill-md"
+homepage = "https://github.com/Leopere/autoskill-md"
+readme = "README.md"
+include = [
+  "Cargo.toml",
+  "Cargo.lock",
+  "LICENSE",
+  "README.md",
+  "autoskill.config.json",
+  ".well-known/skills.md",
+  "src/**/*.rs",
+  "tests/**/*.rs"
+]
+
+[lib]
+name = "autoskill_md"
+path = "src/lib.rs"
+
+[[bin]]
+name = "autoskill-md"
+path = "src/main.rs"
+
+[dependencies]
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"

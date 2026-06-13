@@ -1,7 +1,7 @@
 {
   "name": "autoskill-md",
-  "version": "0.1.1",
-  "description": "Generate /.well-known/skills.md from code comments and route hints.",
+  "version": "0.2.0",
+  "description": "Native autoskill-md wrapper for generating /.well-known/skills.md.",
   "type": "module",
   "license": "CC-BY-4.0",
   "author": "Colin Knapp and contributors",
@@ -18,18 +18,20 @@
     "autoskill.config.json",
     "bin",
     "docs",
-    "src",
     "LICENSE",
     "README.md"
   ],
   "scripts": {
+    "postinstall": "node ./bin/install.js",
     "autoskill": "node ./bin/autoskill-md.js generate",
     "autoskill:check": "node ./bin/autoskill-md.js check --strict",
-    "build": "node ./bin/autoskill-md.js generate --quiet",
-    "check": "node ./bin/autoskill-md.js check --strict",
+    "build": "cargo build --release && ./target/release/autoskill-md generate --quiet",
+    "check": "./target/release/autoskill-md check --strict",
+    "crate:check": "cargo package --allow-dirty --no-verify",
     "pack:check": "npm pack --dry-run",
-    "test": "node --test",
-    "verify": "npm run build && npm run check && npm test && npm run pack:check"
+    "test": "cargo test",
+    "test:wrappers": "node ./bin/autoskill-md.js --version && python3 -m autoskill_md --version && go run ./cmd/autoskill-md --version",
+    "verify": "npm run build && npm run check && npm test && npm run test:wrappers && npm run crate:check && npm run pack:check"
   },
   "engines": {
     "node": ">=20"

@@ -1,18 +1,19 @@
 {
   "name": "autoskill-md",
-  "purpose": "This CLI writes a skills file for agents.",
+  "purpose": "This native CLI writes a skills file for agents.",
   "apiBase": "/",
   "auth": "No auth is needed to read this repo or run the CLI.",
   "safeActions": [
     "Scan local code comments and route hints.",
-    "Write .well-known/skills.md."
+    "Write .well-known/skills.md.",
+    "Run through Rust, npm, Python, or Go wrappers."
   ],
   "riskyActions": [
     "Ask before publishing files or changing a remote repo.",
     "Use --strict only when CI should fail."
   ],
   "docs": [
-    "https://colinknapp.com/specs/mcp-discovery.html",
+    "https://colinknapp.com/specs/skill-discovery.html",
     "https://github.com/Leopere/autoskill-md#readme"
   ],
   "support": "https://github.com/Leopere/autoskill-md/issues",

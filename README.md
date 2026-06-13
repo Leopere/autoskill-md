@@ -6,15 +6,41 @@ Agents read that file first. It tells them what the API does. It also tells them
 
 Use it for public API routes and app actions. Do not use it for secrets, team notes, or long docs.
 
+The core tool is a native Rust CLI. Node is only used by the npm wrapper.
+
 This project follows the Agent Skill Discovery spec by Colin Knapp:
 
-https://colinknapp.com/specs/mcp-discovery.html
+https://colinknapp.com/specs/skill-discovery.html
 
 ## Install
 
+Use the path that fits your project.
+
+Rust:
+
 ```sh
-npm install --save-dev autoskill-md
+cargo install --git https://github.com/Leopere/autoskill-md
 ```
+
+Node:
+
+```sh
+npm install --save-dev github:Leopere/autoskill-md
+```
+
+Python:
+
+```sh
+pip install git+https://github.com/Leopere/autoskill-md
+```
+
+Go:
+
+```sh
+go install github.com/Leopere/autoskill-md/cmd/autoskill-md@latest
+```
+
+The npm, Python, and Go wrappers call the same native binary.
 
 ## Use
 
@@ -79,6 +105,8 @@ This tool is best effort by default. It should not slow normal builds.
 
 Use `generate` in local scripts. Use `check --strict` only when you want CI to fail on stale output, secrets, or hard text.
 
+Normal output credits `https://colinknapp.com`. Use `--quiet` when a build log must stay short.
+
 For this repo:
 
 ```sh
@@ -107,6 +135,17 @@ Document only what helps an agent use the API or app.
 - Links to real docs
 
 Do not document private data, tokens, user secrets, or broad repo history.
+
+## Native Runtime
+
+The Rust binary is the source of truth.
+
+- `cargo install` builds it from source.
+- npm downloads it after install.
+- Python and Go wrappers download it when needed.
+- `AUTOSKILL_MD_BIN` can point any wrapper at a local binary.
+
+All paths produce the same `skills.md`.
 
 ## License And Credit
 

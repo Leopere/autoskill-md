@@ -10,6 +10,10 @@ That file is for agents. It should explain API routes, app actions, auth, safe c
 
 It should not hold secrets. It should not replace full docs.
 
+The core tool is a Rust binary.
+
+Wrappers for npm, Python, and Go must call that same binary.
+
 ## Build Rules
 
 Use these scripts:
@@ -18,10 +22,11 @@ Use these scripts:
 npm run build
 npm run check
 npm test
+npm run test:wrappers
 npm run verify
 ```
 
-`npm run build` writes `.well-known/skills.md`.
+`npm run build` builds the Rust binary and writes `.well-known/skills.md`.
 
 `npm run check` checks that the file is fresh, safe, and easy to read.
 
@@ -54,3 +59,11 @@ git remote -v
 `ship.sh` runs `npm run verify`.
 
 Then it stages files, commits them, and pushes the current branch to GitHub.
+
+For a release:
+
+```sh
+./scripts/release.sh 0.2.0
+```
+
+Tagged GitHub releases build native binary files for npm, Python, and Go wrappers.

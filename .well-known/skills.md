@@ -4,7 +4,7 @@ This file tells agents how to use autoskill-md.
 
 ## Purpose
 
-This CLI writes a skills file for agents.
+This native CLI writes a skills file for agents.
 
 ## API
 
@@ -18,6 +18,7 @@ This CLI writes a skills file for agents.
 
 ## Safe Actions
 
+- Run through Rust, npm, Python, or Go wrappers.
 - Scan local code comments and route hints.
 - Write .well-known/skills.md.
 
@@ -33,14 +34,14 @@ This CLI writes a skills file for agents.
 
 ## More Info
 
+- Docs: https://colinknapp.com/specs/skill-discovery.html
 - Docs: https://github.com/Leopere/autoskill-md
-- Docs: https://colinknapp.com/specs/mcp-discovery.html
 - Docs: https://github.com/Leopere/autoskill-md#readme
 - Support: https://github.com/Leopere/autoskill-md/issues
 
 ## Credits
 
-- Spec: https://colinknapp.com/specs/mcp-discovery.html
+- Spec: https://colinknapp.com/specs/skill-discovery.html
 - Spec version: 2026-06-13
 - Credit: https://colinknapp.com
 - License: CC-BY-4.0

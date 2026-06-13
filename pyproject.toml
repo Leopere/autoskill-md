@@ -1,0 +1,15 @@
+[project]
+name = "autoskill-md"
+version = "0.2.0"
+description = "Generate /.well-known/skills.md from code comments and route hints."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "CC-BY-4.0"
+authors = [{ name = "Colin Knapp and contributors" }]
+
+[project.urls]
+Homepage = "https://github.com/Leopere/autoskill-md"
+Spec = "https://colinknapp.com/specs/skill-discovery.html"
+
+[project.scripts]
+autoskill-md = "autoskill_md:main"
