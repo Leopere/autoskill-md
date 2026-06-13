@@ -1,8 +1,10 @@
 # autoskill-md
 
-`autoskill-md` writes `.well-known/skills.md` for an API or repo.
+`autoskill-md` writes `.well-known/skills.md` for an API or app.
 
 Agents read that file first. It tells them what the API does. It also tells them what is safe.
+
+Use it for public API routes and app actions. Do not use it for secrets, team notes, or long docs.
 
 This project follows the Agent Skill Discovery spec by Colin Knapp:
 
@@ -76,6 +78,35 @@ The scanner also looks at common route code in Go, Rust, Node.js, and Python.
 This tool is best effort by default. It should not slow normal builds.
 
 Use `generate` in local scripts. Use `check --strict` only when you want CI to fail on stale output, secrets, or hard text.
+
+For this repo:
+
+```sh
+npm run verify
+```
+
+To ship changes:
+
+```sh
+./ship.sh "your commit message"
+```
+
+The script uses `gh` to check GitHub access. It uses `git` over SSH to push.
+
+More detail is in `docs/BUILD_AND_SHIP.md`.
+
+## What To Document
+
+Document only what helps an agent use the API or app.
+
+- API base paths
+- Auth rules
+- Safe read actions
+- Risky write actions
+- Rate limits
+- Links to real docs
+
+Do not document private data, tokens, user secrets, or broad repo history.
 
 ## License And Credit
 

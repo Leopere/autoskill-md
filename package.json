@@ -17,6 +17,7 @@
     ".well-known",
     "autoskill.config.json",
     "bin",
+    "docs",
     "src",
     "LICENSE",
     "README.md"
@@ -24,7 +25,11 @@
   "scripts": {
     "autoskill": "node ./bin/autoskill-md.js generate",
     "autoskill:check": "node ./bin/autoskill-md.js check --strict",
-    "test": "node --test"
+    "build": "node ./bin/autoskill-md.js generate --quiet",
+    "check": "node ./bin/autoskill-md.js check --strict",
+    "pack:check": "npm pack --dry-run",
+    "test": "node --test",
+    "verify": "npm run build && npm run check && npm test && npm run pack:check"
   },
   "engines": {
     "node": ">=20"
