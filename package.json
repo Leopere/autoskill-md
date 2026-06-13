@@ -1,0 +1,32 @@
+{
+  "name": "autoskill-md",
+  "version": "0.1.0",
+  "description": "Generate /.well-known/skills.md from code comments and route hints.",
+  "type": "module",
+  "license": "CC-BY-4.0",
+  "author": "Colin Knapp and contributors",
+  "homepage": "https://github.com/Leopere/autoskill-md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Leopere/autoskill-md.git"
+  },
+  "bin": {
+    "autoskill-md": "./bin/autoskill-md.js"
+  },
+  "files": [
+    ".well-known",
+    "autoskill.config.json",
+    "bin",
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "autoskill": "node ./bin/autoskill-md.js generate",
+    "autoskill:check": "node ./bin/autoskill-md.js check --strict",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
